@@ -4,7 +4,7 @@ open class  ShoppingItem protected constructor(val colorId: Int, val productName
 
     open fun getDisplayName() : String {
         return """
-            Product name:  $productName
+            Product name: $productName
             Product price: $itemPrice
         """.trimIndent()
     }
@@ -13,10 +13,13 @@ open class  ShoppingItem protected constructor(val colorId: Int, val productName
 class GroceryItem(colorId: Int, productName: String, itemPrice: String, val isRefigerated: Boolean): ShoppingItem(colorId, productName, itemPrice) {
 
     override fun getDisplayName(): String {
+        var fridge = ""
+        if (isRefigerated) fridge = "Yes" else fridge ="No"
+
         return """
-            Product name:           $productName
-            Product price:          $itemPrice
-            Requires refrigeration: $isRefigerated
+            Product name: $productName
+            Product price: $itemPrice
+            Requires refrigeration: $fridge
         """.trimIndent()
     }
 }
@@ -25,9 +28,9 @@ class ClothingItem(colorId: Int, productName: String, itemPrice: String, val siz
 
     override fun getDisplayName(): String {
         return """
-            Product name:  $productName
+            Product name: $productName
             Product price: $itemPrice
-            Product size:  $size
+            Product size: $size
         """.trimIndent()
     }
 }
@@ -36,9 +39,9 @@ class SportsItem(colorId: Int, productName: String, itemPrice: String, val typeO
 
     override fun getDisplayName(): String {
         return """
-            Product name:  $productName
+            Product name: $productName
             Product price: $itemPrice
-            Sport:         $typeOfSport
+            Sport: $typeOfSport
         """.trimIndent()
     }
 }

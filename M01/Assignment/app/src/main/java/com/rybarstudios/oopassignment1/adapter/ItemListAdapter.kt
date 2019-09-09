@@ -3,6 +3,7 @@ package com.rybarstudios.oopassignment1.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.rybarstudios.oopassignment1.R
@@ -21,9 +22,11 @@ class ItemListAdapter(val itemList: ArrayList<ShoppingItem>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.textView.text = itemList[position].getDisplayName()
+        holder.layout.setBackgroundColor(itemList[position].colorId)
     }
 
     class CustomViewHolder(view: View): RecyclerView.ViewHolder(view) {
+        val layout: androidx.cardview.widget.CardView = view.list_item_layout
         val textView: TextView = view.text_view_list_item
     }
 }
