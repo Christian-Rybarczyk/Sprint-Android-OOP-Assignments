@@ -1,6 +1,6 @@
 package com.rybarstudios.oopassignment1.model
 
-open class  ShoppingItem protected constructor(val colorId: Int, val productName: String, val itemPrice: Int) {
+open class  ShoppingItem protected constructor(val colorId: Int, val productName: String, val itemPrice: String) {
 
     open fun getDisplayName() : String {
         return """
@@ -10,7 +10,7 @@ open class  ShoppingItem protected constructor(val colorId: Int, val productName
     }
 }
 
-class GroceryItem(colorId: Int, productName: String, itemPrice: Int, val isRefigerated: Boolean): ShoppingItem(colorId, productName, itemPrice) {
+class GroceryItem(colorId: Int, productName: String, itemPrice: String, val isRefigerated: Boolean): ShoppingItem(colorId, productName, itemPrice) {
 
     override fun getDisplayName(): String {
         return """
@@ -21,7 +21,7 @@ class GroceryItem(colorId: Int, productName: String, itemPrice: Int, val isRefig
     }
 }
 
-class ClothingItem(colorId: Int, productName: String, itemPrice: Int, val size: String): ShoppingItem(colorId, productName, itemPrice) {
+class ClothingItem(colorId: Int, productName: String, itemPrice: String, val size: String): ShoppingItem(colorId, productName, itemPrice) {
 
     override fun getDisplayName(): String {
         return """
@@ -32,7 +32,7 @@ class ClothingItem(colorId: Int, productName: String, itemPrice: Int, val size: 
     }
 }
 
-class SportsItem(colorId: Int, productName: String, itemPrice: Int, val typeOfSport: String): ShoppingItem(colorId, productName, itemPrice) {
+class SportsItem(colorId: Int, productName: String, itemPrice: String, val typeOfSport: String): ShoppingItem(colorId, productName, itemPrice) {
 
     override fun getDisplayName(): String {
         return """
