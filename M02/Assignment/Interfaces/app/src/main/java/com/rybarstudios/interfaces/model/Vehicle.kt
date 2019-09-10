@@ -75,3 +75,24 @@ interface WaterTravel {
 interface GroundTravel {
     fun drive(): String
 }
+
+object VehicleList val vehicleList: ArrayList<Vehicle> = arrayListOf(
+    Plane("Airplane",
+        90000,
+        true),
+    Boat("Boat",
+        40000,
+        false),
+    Sailboat("Sailboat",
+        12500,
+        false),
+    Car("Car",
+        8000,
+        true),
+    ElectricVehicle("Tesla",
+        5200,
+        true),
+    Helicopter("Helicopter",
+        17000,
+        false)
+)
