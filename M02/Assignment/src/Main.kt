@@ -1,7 +1,8 @@
+import classes.*
 
 fun main(args: Array<String>) {
 
-    var listOfVehicles = arrayListOf<Vehicle>(
+    val listOfVehicles = arrayListOf<Vehicle>(
         Boat(),
         Helicopter(),
         Car(),
@@ -26,4 +27,3 @@ interface WaterTravel {
 interface GroundTravel {
     fun drive()
 }
-
