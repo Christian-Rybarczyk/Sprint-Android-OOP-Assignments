@@ -1,12 +1,12 @@
 package com.rybarstudios.interfaces.model
 
 abstract class Vehicle(val id: String, val weight: Int, var favorite: Boolean) {
-    abstract fun travel()
+    abstract fun travel(): String
 }
 
 class Boat(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), WaterTravel {
-    override fun travel() {
-        sail()
+    override fun travel(): String {
+        return sail()
     }
 
     override fun sail(): String {
@@ -15,8 +15,8 @@ class Boat(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, fav
 }
 
 class Car(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), GroundTravel {
-    override fun travel() {
-        drive()
+    override fun travel(): String {
+        return drive()
     }
 
     override fun drive(): String {
@@ -25,8 +25,8 @@ class Car(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favo
 }
 
 class ElectricVehicle(id: String, weight: Int, favorite: Boolean) : Vehicle(id,weight, favorite), GroundTravel {
-    override fun travel() {
-        drive()
+    override fun travel(): String {
+        return drive()
     }
 
     override fun drive(): String {
@@ -35,8 +35,8 @@ class ElectricVehicle(id: String, weight: Int, favorite: Boolean) : Vehicle(id,w
 }
 
 class Helicopter(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), AirTravel {
-    override fun travel() {
-        fly()
+    override fun travel(): String {
+        return fly()
     }
 
     override fun fly(): String {
@@ -45,8 +45,8 @@ class Helicopter(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weigh
 }
 
 class Sailboat(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), WaterTravel {
-    override fun travel() {
-        sail()
+    override fun travel(): String {
+        return sail()
     }
 
     override fun sail(): String {
@@ -55,8 +55,8 @@ class Sailboat(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight,
 }
 
 class Plane(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite) , AirTravel {
-    override fun travel() {
-        fly()
+    override fun travel(): String {
+        return fly()
     }
 
     override fun fly(): String {
@@ -75,24 +75,3 @@ interface WaterTravel {
 interface GroundTravel {
     fun drive(): String
 }
-
-object VehicleList val vehicleList: ArrayList<Vehicle> = arrayListOf(
-    Plane("Airplane",
-        90000,
-        true),
-    Boat("Boat",
-        40000,
-        false),
-    Sailboat("Sailboat",
-        12500,
-        false),
-    Car("Car",
-        8000,
-        true),
-    ElectricVehicle("Tesla",
-        5200,
-        true),
-    Helicopter("Helicopter",
-        17000,
-        false)
-)

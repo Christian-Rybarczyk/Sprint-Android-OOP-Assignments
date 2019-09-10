@@ -1,5 +1,6 @@
 package com.rybarstudios.interfaces.dummy
 
+import com.rybarstudios.interfaces.model.*
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -9,13 +10,41 @@ import java.util.HashMap
  *
  * TODO: Replace all uses of this class before publishing your app.
  */
-object DummyContent {
+object VehicleList {
 
-    /**
-     * An array of sample (dummy) items.
-     */
-    val ITEMS: MutableList<DummyItem> = ArrayList()
+    val ITEMS: MutableList<Vehicle> = ArrayList()
+    val ITEM_MAP: MutableMap<String, Vehicle> = HashMap()
 
+    init {
+        ITEMS.add(Boat("Boat",
+            40000,
+            false))
+        ITEMS.add(Sailboat("Sailboat",
+            12500,
+            false))
+        ITEMS.add(Car("Car",
+            8000,
+            true))
+        ITEMS.add(Plane("Airplane",
+            90000,
+            true))
+        ITEMS.add(ElectricVehicle("Tesla",
+            5200,
+            true))
+        ITEMS.add(Helicopter("Helicopter",
+            17000,
+            false))
+
+
+
+        ITEM_MAP[ITEMS[0].id] = ITEMS[0]
+        ITEM_MAP[ITEMS[1].id] = ITEMS[1]
+        ITEM_MAP[ITEMS[2].id] = ITEMS[2]
+        ITEM_MAP[ITEMS[3].id] = ITEMS[3]
+        ITEM_MAP[ITEMS[4].id] = ITEMS[4]
+        ITEM_MAP[ITEMS[5].id] = ITEMS[5]
+    }
+    /*
     /**
      * A map of sample (dummy) items, by ID.
      */
@@ -54,4 +83,6 @@ object DummyContent {
     data class DummyItem(val id: String, val content: String, val details: String) {
         override fun toString(): String = content
     }
+
+     */
 }
