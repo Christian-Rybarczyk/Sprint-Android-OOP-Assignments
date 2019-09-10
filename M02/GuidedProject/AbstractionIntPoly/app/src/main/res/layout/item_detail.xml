@@ -6,6 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send info"
+        />
+
     <!--S04M03-22 add transition name to shared elements-->
     <ImageView
         android:id="@+id/item_image"
