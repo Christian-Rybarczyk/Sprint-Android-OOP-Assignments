@@ -4,6 +4,7 @@ class ElectricVehicle : Vehicle(), GroundTravel {
     }
 
     override fun drive() {
-        print("Drive with battery power.")
+        val name: String = javaClass.toString().replace("class", "")
+        println("The$name drives with battery power.")
     }
 }

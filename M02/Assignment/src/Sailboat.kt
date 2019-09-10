@@ -4,6 +4,7 @@ class Sailboat : Vehicle(), WaterTravel {
     }
 
     override fun sail() {
-        println("Sail with sails")
+        val name: String = javaClass.toString().replace("class", "")
+        println("The$name moves with sails.")
     }
 }

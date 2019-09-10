@@ -4,6 +4,7 @@ class Plane : Vehicle() ,AirTravel {
     }
 
     override fun fly() {
-        println("Fly with wings.")
+        val name: String = javaClass.toString().replace("class", "")
+        println("The$name flies with wings.")
     }
 }

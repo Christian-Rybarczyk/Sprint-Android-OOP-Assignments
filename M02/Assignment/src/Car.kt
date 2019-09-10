@@ -4,6 +4,7 @@ class Car : Vehicle(), GroundTravel {
     }
 
     override fun drive() {
-        println("Drive with an engine")
+        val name: String = javaClass.toString().replace("class", "")
+        println("The$name drives with gas.")
     }
 }
