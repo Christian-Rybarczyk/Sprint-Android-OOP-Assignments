@@ -2,6 +2,7 @@ package com.rybarstudios.oopassignment3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.reactivex.Observable
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,20 @@ class MainActivity : AppCompatActivity() {
         val employeeManager = EmployeeManager<Employee>()
         employeeManager.put(Employee())
 //        employeeManager.put(NotAnEmployee())
+
+        val verizonService = VerizonService()
+        val tMobileService = TMobileService()
+
+        val phone = Phone(verizonService, tMobileService)
+
+        val observable = Observable.just(1,2, 3)
+        observable.subscribe() {string -> println(string)}
+
+        val tom = Actor("Tom Cruise")
+        val brad = Actor("Brad Pitt")
+
+        val actorObservable = Observable.just(tom, brad)
+        actorObservable.subscribe() {string -> println(string)}
     }
 
     //Task 2
@@ -39,9 +54,13 @@ class MainActivity : AppCompatActivity() {
 
     data class NotAnEmployee(val name:String = "Matthew")
 
-    class CellularService(var serviceName: String = "Verizon")
+    open class CellularService()
 
-    class Phone<T: CellularService, S: CellularService>(private var serviceName: T)
+    class VerizonService : CellularService()
+    class TMobileService : CellularService()
 
+    class Phone<T: CellularService, S: CellularService>(private var serviceName: T, private var otherService: S)
+
+    data class Actor(val name: String)
 
 }
