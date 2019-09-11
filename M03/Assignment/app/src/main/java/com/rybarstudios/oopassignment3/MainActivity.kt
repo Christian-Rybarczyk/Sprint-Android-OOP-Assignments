@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val stringList = mutableListOf<String>()
         stringList.add("1")
 
-        var employeeManager = EmployeeManager<Employee>()
+        val employeeManager = EmployeeManager<Employee>()
         employeeManager.put(Employee())
 //        employeeManager.put(NotAnEmployee())
     }
@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
     data class Employee(val name: String = "Christian")
 
     data class NotAnEmployee(val name:String = "Matthew")
+
+    class CellularService(var serviceName: String)
+
+    class Phone<T: CellularService>(private var serviceName: CellularService)
 
 
 }
