@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() {
 
     data class NotAnEmployee(val name:String = "Matthew")
 
-    class CellularService(var serviceName: String)
+    class CellularService(var serviceName: String = "Verizon")
 
-    class Phone<T: CellularService>(private var serviceName: CellularService)
+    class Phone<T: CellularService, S: CellularService>(private var serviceName: T)
 
 
 }
